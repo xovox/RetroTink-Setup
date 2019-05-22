@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Generate /boot/config.txt
+      template:
+        src: templates/config.txt.j2
+        dest: /boot/config
+        backup: true
+        owner: root
+        group: root
+        mode: 644
+
+
+    - name: RetroArch Configs
+      synchronize:
+        src: configs/
+        dest: /opt/retropie/configs/
+        rsync_opts:
+          - "--backup"
+          - "--suffix {{ansible_date_time.iso8601}}"

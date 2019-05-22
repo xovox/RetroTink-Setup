@@ -18,7 +18,7 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 
 # Requirements
 
-* Raspberry Pi 2 or newer
+* Raspberry Pi with a full size GPIO
 * A RetroTink!
   * http://www.retrotink.com
 
@@ -33,6 +33,8 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 - [x] On End script sets us back to default timings
 - [ ] On Start script checks for per-game timings
 - [ ] Scripts need to work well with other RetroPie projects I'm working on
+- [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/
+- [ ] hdmiTimings needs to be smart enough to see if we're running on a CRT
 
 * Ansible Installer
 - [ ] Update config.txt
@@ -40,6 +42,7 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 
 * Configs
 - [x] /boot/config.txt settings figured out
+- [ ] /boot/config.txt find changed/added lines
 
 * Video
 - [x] Collect NTSC timings
