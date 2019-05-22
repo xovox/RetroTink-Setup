@@ -1,6 +1,6 @@
 # RetroTink-Setup
 
-I *love* my RetroPie, and I really want to use my RetroTink with it.  I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁  I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
+I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁  I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
 
 This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them to fix really obnoxious issues... so here we are!
 
@@ -29,10 +29,18 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 
 * Scripts
 - [ ] Write installer wrapper
-- [ ] Onstart script checks for per-game timings
+- [x] On Start script sets per-emulator timings
+- [x] On End script sets us back to default timings
+- [ ] On Start script checks for per-game timings
+- [ ] Scripts need to work well with other RetroPie projects I'm working on
 
-* Ansible
-- [ ] Installer
+* Ansible Installer
+- [ ] Update config.txt
+- [ ] Update RetroArch configs
+
+* Configs
+- [x] /boot/config.txt settings figured out
 
 * Video
+- [x] Collect NTSC timings
 - [ ] Find someone to figure out PAL timings
