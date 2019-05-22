@@ -35,3 +35,7 @@
         block: "{{ lookup('file', 'files/smb.conf') }}"
         path: /etc/samba/smb.conf
         backup: yes
+
+    - name: Create Save States Directories
+      shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savestates/%f\n'"
+      shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savefiles/%f\n'"
