@@ -1,16 +1,17 @@
 ---
 - hosts: all
-  become: true
+  become: yes
+  become_user: root
+
   tasks:
     - name: Generate /boot/config.txt
       template:
         src: templates/config.txt.j2
         dest: /boot/config
-        backup: true
+        backup: yes
         owner: root
         group: root
         mode: 644
-
 
     - name: RetroArch Configs
       synchronize:
@@ -19,3 +20,18 @@
         rsync_opts:
           - "--backup"
           - "--suffix {{ansible_date_time.iso8601}}"
+
+    - name: Restrict EmulationStation Systems List
+      copy:
+        src: files/es_systems.cfg
+        dest: /etc/emulationstation/es_systems.cfg
+        backup: yes
+        ower: root
+        group: root
+        mode: 644
+
+    - name: Add Our Samba Configuration To /etc/samba/smb.conf
+      blockinfile:
+        block: "{{ lookup('file', 'files/smb.conf') }}"
+        path: /etc/samba/smb.conf
+        backup: yes
