@@ -26,7 +26,7 @@ I *love* my RetroPie, and I really want to use my RetroTink with it... but I don
 
 This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
 
-Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork.
+Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
 
 # Goals
 
