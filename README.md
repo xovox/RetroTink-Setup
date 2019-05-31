@@ -64,6 +64,26 @@ sudo /bin/bash ./retrotink_setup.sh
 |------		|-------	|--------	|--------
 | Panasonic	| CT-27D10	| Component	| None
 
+# Emulator Compatibility
+
+I'm aiming to cover everything available, but these are the only platforms I've thoroughly tested.
+
+* arcade
+* fba
+* mame-libretro
+* mastersystem
+* megadrive
+* n64
+* neogeo
+* nes
+* pcengine
+* psx
+* retropie
+* sega32x
+* segacd
+* snes
+* supergrafx
+
 # Troubleshooting
 
 See the [troubleshooting doc](TROUBLESHOOTING.md).
