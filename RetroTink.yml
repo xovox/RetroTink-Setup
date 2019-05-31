@@ -23,6 +23,7 @@
   become_user: root
 
   tasks:
+    # vfat doesn't like the standard Ansible backup extension
     - name: Backup /boot/config.txt
       copy:
         src: /boot/config.txt
