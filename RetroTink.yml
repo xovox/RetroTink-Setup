@@ -114,3 +114,10 @@
       git:
         repo: https://github.com/anthonycaccese/es-theme-art-book-pocket
         dest: /etc/emulationstation/themes/ArtBookPocket
+
+    - name: 240p Test Suite ROMs & ISOs
+      synchronize:
+        src: files/roms/
+        dest: /home/pi/RetroPie/roms/
+        rsync_opts:
+          - "--exclude README.md"
