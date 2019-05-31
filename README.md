@@ -22,6 +22,8 @@ This only works under a vanilla installation of RetroPie 4.4!  If you run the up
 
 # RetroTink-Setup
 
+NOTE: I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup naming convention only.  I am not affiliated with Mike Chi & RetroTink.
+
 I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
 
 This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
