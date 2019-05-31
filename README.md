@@ -49,7 +49,7 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 ```
 git clone https://github.com/xovox/RetroTink-Setup
 cd RetroTink-Setup
-sudo ./retrotink_setup.sh
+sudo /bin/bash ./retrotink_setup.sh
 ```
 
 # TV Compatibility
@@ -62,7 +62,7 @@ sudo ./retrotink_setup.sh
 
 # Troubleshooting
 
-See [the troubleshooting doc](TROUBLESHOOTING.md).
+See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 # Issues
 
