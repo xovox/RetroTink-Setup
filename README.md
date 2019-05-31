@@ -61,9 +61,23 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 
 # Installation
 
+I'm assuming you're able to SSH in. I typically connect my Pi via Ethernet when I'm first configuring it for ease.
+
+You can also do the initial configuration with a monitor hooked up to HDMI.
+
+* [Enabling SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) on the official Raspbian docs.
+  * This is best solved by putting your SD card in another machine and creating an empty file called 'ssh' in the boot partition.
+* [Wireless Connectivity](https://www.raspberrypi.org/documentation/configuration/wireless/README.md) is an option, but I prefer wired for simplicity.
+* SSH Clients
+  * [Windows](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md)
+  * [Linux & macOS](https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md)
+
+You can cut & paste this into your terminal.
+
 ```
-git clone https://github.com/xovox/RetroTink-Setup
-cd RetroTink-Setup
+cd &&
+git clone https://github.com/xovox/RetroTink-Setup &&
+cd RetroTink-Setup &&
 sudo /bin/bash ./retrotink_setup.sh
 ```
 
