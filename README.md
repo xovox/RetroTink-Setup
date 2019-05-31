@@ -37,7 +37,8 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 - [ ] hdmiTimings needs to be smart enough to see if we're running on a CRT
 
 * Ansible Installer
-- [ ] Update config.txt
+- [ ] Update config.txt using template
+- [ ] Update config.txt using 'ini_file' // https://docs.ansible.com/ansible/latest/modules/ini_file_module.html
 - [ ] Update RetroArch configs
 
 * Configs

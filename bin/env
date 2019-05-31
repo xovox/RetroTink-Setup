@@ -4,11 +4,13 @@
 # Common environment for any support scripts we use
 # ############################################################################
 
+source $HOME/RetroTink-Setup/config
+
 # where we keep everything
 retroTinkDir=$HOME/RetroTink-Setup
 
 # our per-system video modes
-hdmiTimingsDir=$retroTinkDir/hdmi_timings
+hdmiTimingsDir=$retroTinkDir/hdmi_timings/$tvRegion
 
 # if we have a timings file, let's use it!
 hdmiTimings() {
