@@ -1,2 +1,8 @@
-# change to ntsc or pal
-tvRegion=ntsc
+#!/bin/bash
+#
+## change to ntsc or pal
+tvRegion="ntsc"
+
+retroTinkDir="/home/pi/RetroTink-Setup"
+
+export ANSIBLE_RETRY_FILES_ENABLED=0

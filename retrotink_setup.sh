@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export ANSIBLE_RETRY_FILES_ENABLED=0
-
-retroTinkDir="/home/pi/RetroTink-Setup"
+source ./config
 
 if [ "$EUID" != "0" -o "$UID" != "0" ]; then
 	echo -e "We need to be root!\n\nrun:\n\tsudo $0\n"
@@ -17,8 +15,6 @@ fi
 if [ "$errorExit" ]; then
 	exit
 fi
-
-source $retroTinkDir/config
 
 hdmi_timings="$(cat hdmi_timings/$tvRegion/default)"
 

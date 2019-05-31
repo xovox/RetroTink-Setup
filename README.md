@@ -24,26 +24,39 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 
 # Installation
 
+```
+sudo ./retrotink_setup.sh
+```
 
 # TODO
 
 * Scripts
-- [ ] Write installer wrapper
-- [x] On Start script sets per-emulator timings
-- [x] On End script sets us back to default timings
-- [ ] On Start script checks for per-game timings
-- [ ] Scripts need to work well with other RetroPie projects I'm working on
+- [ ] Work well with other RetroPie scripts I'm writing
 - [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/
 - [ ] hdmiTimings needs to be smart enough to see if we're running on a CRT
 
+* On Start Script
+- [x] Use per-emulator timings
+- [ ] Use per-game timings
+
+* On End Script
+- [x] Revert to boot's hdmi_timings
+
+* Script Installer
+- [x] Write installer wrapper
+
 * Ansible Installer
-- [ ] Update config.txt using template
-- [ ] Update config.txt using 'ini_file' // https://docs.ansible.com/ansible/latest/modules/ini_file_module.html
-- [ ] Update RetroArch configs
+- [x] Create config.txt using template
+- [x] Push RetroArch configs
+- [x] Limit what systems we play
+- [ ] Remove notification text on game start
+- [x] Create save states directories
+- [x] Create save files directories
+- [x] Add save states/files dirs to samba
+- [x] Install SD friendly ES themes
 
 * Configs
 - [x] /boot/config.txt settings figured out
-- [ ] /boot/config.txt find changed/added lines
 
 * Video
 - [x] Collect NTSC timings

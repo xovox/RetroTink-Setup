@@ -14,9 +14,6 @@
       template:
         src: templates/config.txt.j2
         dest: /boot/config.txt
-        #owner: root
-        #group: root
-        #mode: 644
 
     - name: RetroArch Configs
       synchronize:
@@ -35,12 +32,66 @@
         group: root
         mode: 644
 
-    - name: Add Our Samba Configuration To /etc/samba/smb.conf
+    - name: Disable RetroArch notification text
+      lineinfile:
+        dest: /opt/retropie/configs/all/retroarch.cfg
+        backup: yes
+        regexp: '^video_font_enable ='
+        line: 'video_font_enable = "false"'
+
+    - name: Create Save States Directories
+      shell: /usr/bin/find . -mindepth 1 -maxdepth 1 -type d -exec mkdir -p /home/pi/RetroPie/savestates/{} \;
+      args:
+        chdir: /home/pi/RetroPie/roms
+
+    - name: Create Save Files Directories
+      shell: /usr/bin/find . -mindepth 1 -maxdepth 1 -type d -exec mkdir -p /home/pi/RetroPie/savefiles/{} \;
+      args:
+        chdir: /home/pi/RetroPie/roms
+
+    - name: Fix Permissions On Save States Directories
+      file:
+        path: /home/pi/RetroPie/savestates
+        state: directory
+        owner: pi
+        group: pi
+        recurse: yes
+
+    - name: Fix Permissions On Save Files Directories
+      file:
+        path: /home/pi/RetroPie/savefiles
+        state: directory
+        owner: pi
+        group: pi
+        recurse: yes
+
+    - name: Add Save States/Files Shares To Samba
       blockinfile:
         block: "{{ lookup('file', 'files/smb.conf') }}"
         dest: /etc/samba/smb.conf
         backup: yes
 
-#    - name: Create Save States Directories
-#        shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savestates/%f\n'"
-#        shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savefiles/%f\n'"
+    - name: "Download Theme: es-theme-freeplay"
+      git:
+        repo: https://github.com/rxbrad/es-theme-freeplay
+        dest: /etc/emulationstation/themes/Freeplay
+
+    - name: "Download Theme: es-theme-gbz35"
+      git:
+        repo: https://github.com/rxbrad/es-theme-gbz35
+        dest: /etc/emulationstation/themes/GBZ35
+
+    - name: "Download Theme: es-theme-crt"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-crt
+        dest: /etc/emulationstation/themes/CRT
+
+    - name: "Download Theme: es-theme-tft"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-tft
+        dest: /etc/emulationstation/themes/TFT
+
+    - name: "Download Theme: es-theme-art-book-pocket"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-art-book-pocket
+        dest: /etc/emulationstation/themes/ArtBookPocket
