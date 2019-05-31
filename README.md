@@ -30,6 +30,17 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 
 Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
 
+# What You Get
+
+* A fairly simple installation path
+
+* 240p boot & emulation look beautiful!
+* CRT Friendly EmulationStation themes
+* No annoying EmulationStation yellow text!
+* Cleaner save states & files organization
+  * Shared over samba, if enabled
+* 240p test suite roms for several platforms
+
 # Goals
 
 * Run on a vanilla RetroPie installation
