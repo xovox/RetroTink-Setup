@@ -1,3 +1,7 @@
+# ZERO WARRANTY
+
+This may brick your RetroPie install!  I've extensively tested it on my own system, but that doesn't mean things will always work the way I experienced in the past!
+
 # RetroTink-Setup
 
 I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
