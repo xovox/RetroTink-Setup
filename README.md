@@ -16,6 +16,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# BIG OLD WARNING
+
+This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport height & width.
+
 # RetroTink-Setup
 
 I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
