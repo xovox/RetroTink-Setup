@@ -6,9 +6,6 @@
 
 source $HOME/RetroTink-Setup/config
 
-# where we keep everything
-retroTinkDir=$HOME/RetroTink-Setup
-
 # our per-system video modes
 hdmiTimingsDir=$retroTinkDir/hdmi_timings/$tvRegion
 
@@ -20,6 +17,6 @@ hdmiTimings() {
 		# set it as a variable
 		hdmi_timings="$(cat $hdmiTimingsFile)"
 		# apply our new timings
-		vcgencmd hdmi_timings $hdmi_timings
+		vcgencmd hdmi_timings $hdmi_timings >> /tmp/timings
 	fi
 }

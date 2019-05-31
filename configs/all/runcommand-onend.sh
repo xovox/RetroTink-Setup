@@ -2,6 +2,6 @@
 #
 # Change Screen mode back
 #
-source $HOME/RetroPie/RetroTink/bin/env
+source $HOME/RetroTink-Setup/bin/env
 
 hdmiTimings default
