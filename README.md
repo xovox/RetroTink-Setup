@@ -1,6 +1,6 @@
 # RetroTink-Setup
 
-I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁  I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
+I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
 
 This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them to fix really obnoxious issues... so here we are!
 
@@ -19,7 +19,7 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 # Requirements
 
 * Raspberry Pi with a full size GPIO
-* A RetroTink!
+* A RetroTink-Ultimate!
   * http://www.retrotink.com
 
 # Installation
@@ -29,6 +29,14 @@ git clone https://github.com/xovox/RetroTink-Setup
 cd RetroTink-Setup
 sudo ./retrotink_setup.sh
 ```
+
+# TV Compatibility
+
+## NTSC
+
+| Make 		| Model 	| Tested 	| Issues
+|------		|-------	|--------	|--------
+| Panasonic	| CT-27D10	| Component	| None
 
 # Tasks
 
