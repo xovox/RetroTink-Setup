@@ -25,10 +25,12 @@ This project is designed to make running RetroPie with a RetroTink as seamless a
 # Installation
 
 ```
+git clone https://github.com/xovox/RetroTink-Setup
+cd RetroTink-Setup
 sudo ./retrotink_setup.sh
 ```
 
-# TODO
+# Tasks
 
 * Scripts
 - [ ] Work well with other RetroPie scripts I'm writing
@@ -49,7 +51,7 @@ sudo ./retrotink_setup.sh
 - [x] Create config.txt using template
 - [x] Push RetroArch configs
 - [x] Limit what systems we play
-- [ ] Remove notification text on game start
+- [x] Remove notification text on game start
 - [x] Create save states directories
 - [x] Create save files directories
 - [x] Add save states/files dirs to samba
