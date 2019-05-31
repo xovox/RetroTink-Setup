@@ -62,7 +62,7 @@ sudo ./retrotink_setup.sh
 
 # Troubleshooting
 
-See (TROUBLESHOOTING.md)
+See [this document](TROUBLESHOOTING.md)
 
 # Issues
 
