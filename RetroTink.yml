@@ -1,17 +1,22 @@
 ---
 - hosts: all
+  connection: local
   become: yes
   become_user: root
 
   tasks:
+    - name: Backup /boot/config.txt
+      copy:
+        src: /boot/config.txt
+        dest: /boot/config.txt.{{ansible_date_time.epoch}}
+
     - name: Generate /boot/config.txt
       template:
         src: templates/config.txt.j2
-        dest: /boot/config
-        backup: yes
-        owner: root
-        group: root
-        mode: 644
+        dest: /boot/config.txt
+        #owner: root
+        #group: root
+        #mode: 644
 
     - name: RetroArch Configs
       synchronize:
@@ -19,23 +24,23 @@
         dest: /opt/retropie/configs/
         rsync_opts:
           - "--backup"
-          - "--suffix {{ansible_date_time.iso8601}}"
+          - "--suffix .{{ansible_date_time.epoch}}"
 
     - name: Restrict EmulationStation Systems List
       copy:
         src: files/es_systems.cfg
         dest: /etc/emulationstation/es_systems.cfg
         backup: yes
-        ower: root
+        owner: root
         group: root
         mode: 644
 
     - name: Add Our Samba Configuration To /etc/samba/smb.conf
       blockinfile:
         block: "{{ lookup('file', 'files/smb.conf') }}"
-        path: /etc/samba/smb.conf
+        dest: /etc/samba/smb.conf
         backup: yes
 
-    - name: Create Save States Directories
-      shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savestates/%f\n'"
-      shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savefiles/%f\n'"
+#    - name: Create Save States Directories
+#        shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savestates/%f\n'"
+#        shell: "find {{ansible_env.HOME}}/RetroPie/roms -mindepth 1 -maxdepth 1 -printf '{{ansible_env.HOME}}/RetroPie/savefiles/%f\n'"

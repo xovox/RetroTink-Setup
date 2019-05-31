@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Useful data are passed as arguments to these scripts:
+# arguments passed to this script
 #
-# $1 - the system (eg: atari2600, nes, snes, megadrive, fba, etc).
-# $2 - the emulator (eg: lr-stella, lr-fceumm, lr-picodrive, pifba, etc).
-# $3 - the full path to the rom file.
-# $4 - the full command line used to launch the emulator.
+# $1 - system
+# $2 - emulator in use
+# $3 - full path to rom
+# $4 - full emulator command line
 
 source $HOME/RetroTink-Setup/bin/env
 

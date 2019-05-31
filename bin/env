@@ -8,7 +8,7 @@
 retroTinkDir=$HOME/RetroTink-Setup
 
 # our per-system video modes
-hdmiTimingsDir=$retroTinkDir/hdmi_timings
+hdmiTimingsDir=$retroTinkDir/hdmi_timings/ntsc
 
 # if we have a timings file, let's use it!
 hdmiTimings() {
