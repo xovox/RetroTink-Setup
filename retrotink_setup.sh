@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-myRegion=ntsc
+export ANSIBLE_RETRY_FILES_ENABLED=0
 
 retroTinkDir="/home/pi/RetroTink-Setup"
 
@@ -19,15 +18,13 @@ if [ "$errorExit" ]; then
 	exit
 fi
 
-# DIALOG: pick your region
+source $retroTinkDir/config
 
-hdmi_timings="$(cat hdmi_timings/$myRegion/default)"
+hdmi_timings="$(cat hdmi_timings/$tvRegion/default)"
 
 # DIALOG: confirm you want to go ahead
 
-echo "checking for ansible"
-
-if ! (dpkg -l ansible); then
+if ! (dpkg -l ansible > /dev/null); then
   apt update
   apt -y install ansible
 fi
