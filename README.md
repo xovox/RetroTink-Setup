@@ -24,7 +24,9 @@ This only works under a vanilla installation of RetroPie 4.4!  If you run the up
 
 I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
 
-This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them to fix really obnoxious issues... so here we are!
+This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
+
+Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork.
 
 # Goals
 
