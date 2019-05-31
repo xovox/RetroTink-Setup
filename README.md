@@ -56,6 +56,14 @@ sudo ./retrotink_setup.sh
 |------		|-------	|--------	|--------
 | Panasonic	| CT-27D10	| Component	| None
 
+# Troubleshooting
+
+See (TROUBLESHOOTING.md)
+
+# Issues
+
+* Updating fresh install of RetroPie breaks custom_viewport_width & height
+
 # Tasks
 
 * Scripts

@@ -36,7 +36,7 @@ if [ "$errorExit" ]; then
 fi
 
 # pull our hdmi timings
-hdmi_timings="$(cat hdmi_timings/$tvRegion/default)"
+hdmiTimings="$(cat hdmi_timings/$tvRegion/default)"
 
 # install ansible
 if ! (dpkg -l ansible > /dev/null); then
@@ -45,4 +45,4 @@ if ! (dpkg -l ansible > /dev/null); then
 fi
 
 # Update our system with our boot hdmi_timings
-ansible-playbook RetroTink.yml -i localhost, -e "hdmi_timings='$hdmi_timings'"
+ansible-playbook RetroTink.yml -i localhost, -e "hdmi_timings='$hdmiTimings' tv_region='$tvRegion'"
