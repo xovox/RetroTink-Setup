@@ -32,4 +32,6 @@ myCmd="$4"
 myStripRom="${myRom%.*}"
 
 # if we have timings for this system, use them
-hdmiTimings $mySys
+if [ -f "$myRom" ]; then
+	hdmiTimings $mySys
+fi

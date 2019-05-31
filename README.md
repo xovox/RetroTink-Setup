@@ -89,3 +89,6 @@ sudo ./retrotink_setup.sh
 * Video
 - [x] Collect NTSC timings
 - [ ] Find someone to figure out PAL timings
+
+* Alternate Orientation
+- [ ] Vertical!
