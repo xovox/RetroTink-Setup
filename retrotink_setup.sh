@@ -20,6 +20,7 @@
 
 # pull in our config
 source ./config
+export tvRegion
 
 if [ "$PWD" != "$retroTinkDir" ]; then
 	echo -e "Please move this directory to \"$retroTinkDir\"\n"
@@ -37,4 +38,4 @@ if ! (dpkg -l ansible > /dev/null); then
 fi
 
 # Run our configuration playbook
-ansible-playbook RetroTink.yml -i localhost, -e "tv_region='$tvRegion'"
+ansible-playbook RetroTink.yml -i localhost,
