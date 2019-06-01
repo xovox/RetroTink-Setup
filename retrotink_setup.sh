@@ -21,11 +21,6 @@
 # pull in our config
 source ./config
 
-if [ "$EUID" != "0" -o "$UID" != "0" ]; then
-	echo -e "We need to be root!\n\nrun:\n\tsudo $0\n"
-	errorExit="true"
-fi
-
 if [ "$PWD" != "$retroTinkDir" ]; then
 	echo -e "Please move this directory to \"$retroTinkDir\"\n"
         errorExit="true"
@@ -35,14 +30,11 @@ if [ "$errorExit" ]; then
 	exit
 fi
 
-# pull our hdmi timings
-hdmiTimings="$(cat hdmi_timings/$tvRegion/default)"
-
 # install ansible
 if ! (dpkg -l ansible > /dev/null); then
-  apt update
-  apt -y install ansible
+  sudo apt update
+  sudo apt -y install ansible
 fi
 
-# Update our system with our boot hdmi_timings
-ansible-playbook RetroTink.yml -i localhost, -e "hdmi_timings='$hdmiTimings' tv_region='$tvRegion'"
+# Run our configuration playbook
+ansible-playbook RetroTink.yml -i localhost, -e "tv_region='$tvRegion'"

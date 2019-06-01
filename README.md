@@ -78,7 +78,7 @@ You can cut & paste this into your terminal.
 cd &&
 git clone https://github.com/xovox/RetroTink-Setup &&
 cd RetroTink-Setup &&
-sudo /bin/bash ./retrotink_setup.sh
+/bin/bash ./retrotink_setup.sh
 ```
 
 # TV Compatibility
