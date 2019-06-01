@@ -45,14 +45,12 @@
         segasixteen: "genesis"
         segasixteenfull: "Genesis"
       when: tv_region == "ntsc"
-      #when: ansible_facts['ansible_env']['tvRegion'] == "ntsc"
 
     - name: "Are we PAL"
       set_fact:
         segasixteen: "megadrive"
         segasixteenfull: "Mega Drive"
       when: tv_region == "pal"
-      #when: ansible_facts['ansible_env']['tvRegion'] == "ntsc"
 
   tasks:
 
@@ -155,5 +153,3 @@
         dest: /home/pi/RetroPie/roms/
         rsync_opts:
           - "--exclude README.md"
-
- 
