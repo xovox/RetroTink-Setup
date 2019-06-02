@@ -19,13 +19,13 @@
 
 
 # change to ntsc or pal
-tvRegion="ntsc"
+export tvRegion="ntsc"
 
 # where we keep everything
-retroTinkDir="/home/pi/RetroTink-Setup"
+export retroTinkDir="/home/pi/RetroTink-Setup"
 
 # our per-system video modes
-hdmiTimingsDir=$retroTinkDir/hdmi_timings/$tvRegion
+export hdmiTimingsDir=$retroTinkDir/hdmi_timings/$tvRegion
 
 # keep ansible from creating ugly .retry files
 export ANSIBLE_RETRY_FILES_ENABLED=0
