@@ -153,18 +153,19 @@ I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup
 
 Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
 
-```                                      ,
-                                      ;\
-                                     /  \
-                                     `.  i          ,^^--.
-                                  ___  i  \        /      \              ,',^-_
-                                 /   \ !   \       |       |            / /   /
-                                 \   /  \   \      |       ;      ,__. |    ,'
-                                  4 |    \   `.    |      /      (    `   __>
-                                ,_| |_.   \    `-__>      >.      `---'\ /
-                               /,.   ..\   `.               `.         | |
-                               U |   | U     `.               \    ,--~   ~--.
---~~~~--_       _--~~~~--_       _--~~~~--_    \  _--~~~~--_   \  /_--~~~~--_ \
-         `.   ,'          `.   ,'          `.  |,'          `.  \,'          `.
-           \ /              \ /              \ /              \ /              \
+```
+                                                       .
+                                                       ;\
+                                                      /  \
+                                                      `.  i          ,^^--.
+                                                   ___  i  \        /      \              ,',^-_
+                                                  /   \ !   \       |       |            / /   /
+                                                  \   /  \   \      |       ;      ,__. |    ,'
+                                                   4 |    \   `.    |      /      (    `   __>
+                                                 ,_| |_.   \    `-__>      >.      `---'\ /
+                                                /,.   ..\   `.               `.         | |
+                                                U |   | U     `.               \    ,--~   ~--.
+--~~~~--_       _--~~~~--_        _--~~~~--_       _--~~~~--_    \  _--~~~~--_   \  /_--~~~~--_ \
+         `.   ,'          `.   ,'          `.   ,'          `.  |,'          `.  \,'          `.
+           \ /              \ /              \ /              \ /              \ /              \
 ```
