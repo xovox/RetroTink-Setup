@@ -76,8 +76,32 @@
 
     - name: "Copy RetroArch Configs"
       synchronize:
-        src: configs/
+        src: configs/retropie/
         dest: /opt/retropie/configs/
+        rsync_opts:
+          - "--backup"
+          - "--suffix .{{ansible_date_time.epoch}}"
+
+    - name: "Copy RetroArch ROM Configs To fba"
+      synchronize:
+        src: configs/roms/
+        dest: /home/pi/RetroPie/roms/fba/
+        rsync_opts:
+          - "--backup"
+          - "--suffix .{{ansible_date_time.epoch}}"
+
+    - name: "Copy RetroArch ROM Configs To arcade"
+      synchronize:
+        src: configs/roms/
+        dest: /home/pi/RetroPie/roms/arcade/
+        rsync_opts:
+          - "--backup"
+          - "--suffix .{{ansible_date_time.epoch}}"
+
+    - name: "Copy RetroArch ROM Configs To mame-libretro"
+      synchronize:
+        src: configs/roms/
+        dest: /home/pi/RetroPie/roms/mame-libretro/
         rsync_opts:
           - "--backup"
           - "--suffix .{{ansible_date_time.epoch}}"
@@ -122,34 +146,39 @@
         backup: yes
       notify: "restart samba"
 
-    - name: "Download Theme: es-theme-freeplay"
-      git:
-        repo: https://github.com/rxbrad/es-theme-freeplay
-        dest: /etc/emulationstation/themes/Freeplay
-
-    - name: "Download Theme: es-theme-gbz35"
-      git:
-        repo: https://github.com/rxbrad/es-theme-gbz35
-        dest: /etc/emulationstation/themes/GBZ35
-
-    - name: "Download Theme: es-theme-crt"
-      git:
-        repo: https://github.com/anthonycaccese/es-theme-crt
-        dest: /etc/emulationstation/themes/CRT
-
-    - name: "Download Theme: es-theme-tft"
-      git:
-        repo: https://github.com/anthonycaccese/es-theme-tft
-        dest: /etc/emulationstation/themes/TFT
-
-    - name: "Download Theme: es-theme-art-book-pocket"
-      git:
-        repo: https://github.com/anthonycaccese/es-theme-art-book-pocket
-        dest: /etc/emulationstation/themes/ArtBookPocket
-
     - name: "Install 240p Test Suite ROMs & ISOs"
       synchronize:
         src: files/roms/
         dest: /home/pi/RetroPie/roms/
         rsync_opts:
           - "--exclude README.md"
+
+    - name: "Download Theme: Freeplay"
+      git:
+        repo: https://github.com/rxbrad/es-theme-freeplay
+        dest: /etc/emulationstation/themes/Freeplay
+
+    - name: "Download Theme: GBZ35"
+      git:
+        repo: https://github.com/rxbrad/es-theme-gbz35
+        dest: /etc/emulationstation/themes/GBZ35
+
+    - name: "Download Theme: GBZ35 Dark"
+      git:
+        repo: https://github.com/rxbrad/es-theme-gbz35-dark
+        dest: /etc/emulationstation/themes/GBZ35-Dark
+
+    - name: "Download Theme: TFT"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-tft
+        dest: /etc/emulationstation/themes/TFT
+
+    - name: "Download Theme: Art Book Pocket"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-art-book-pocket
+        dest: /etc/emulationstation/themes/ArtBookPocket
+
+    - name: "Download Theme: Picade"
+      git:
+        repo: https://github.com/anthonycaccese/es-theme-picade
+        dest: /etc/emulationstation/themes/Picade
