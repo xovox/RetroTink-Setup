@@ -93,8 +93,6 @@ cd RetroTink-Setup &&
 
 ## NTSC
 
-
-
 | Make 		| Model 	| Tested 	| Issues	| Tested By
 |------		|-------	|--------	|--------	|-----------
 | Panasonic	| CT-27D10	| Component	| None          | Duncan
@@ -105,14 +103,17 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 # Issues
 
-* Updating fresh install of RetroPie breaks custom_viewport_width & height
+* Updating fresh install of RetroPie breaks custom_viewport_width
 
 # Tasks
+
+* General
+- [ ] Reorganize repo, it grew too organically so things are scattered
+- [ ] Build vanilla image people can directly write to their SD card
 
 * Scripts
 - [ ] Work well with other RetroPie scripts I'm writing
 - [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/ or something
-- [ ] hdmiTimings needs to be smart enough to see if we're running on a CRT
 
 * On Start Script
 - [x] Use per-emulator timings
@@ -152,3 +153,18 @@ I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup
 
 Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
 
+```                                      ,
+                                      ;\
+                                     /  \
+                                     `.  i          ,^^--.
+                                  ___  i  \        /      \              ,',^-_
+                                 /   \ !   \       |       |            / /   /
+                                 \   /  \   \      |       ;      ,__. |    ,'
+                                  4 |    \   `.    |      /      (    `   __>
+                                ,_| |_.   \    `-__>      >.      `---'\ /
+                               /,.   ..\   `.               `.         | |
+                               U |   | U     `.               \    ,--~   ~--.
+--~~~~--_       _--~~~~--_       _--~~~~--_    \  _--~~~~--_   \  /_--~~~~--_ \
+         `.   ,'          `.   ,'          `.  |,'          `.  \,'          `.
+           \ /              \ /              \ /              \ /              \
+```
