@@ -1,24 +1,4 @@
-# RetroTink-Setup
-
-I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
-
-This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
-
-# Before We Begin
-
-## Warnings
-
-This is for NTSC only!  PAL is eventually coming, though I can't personally test it.
-
-This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport height & width.
-
-## Notes
-
-I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup naming convention only.  I am not affiliated with Mike Chi & RetroTink.
-
-Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
-
-## License
+# Some License Nonsense
 
 RetroTink-Setup :: Utility suite to configure RetroPie for a RetroTink-Ultimate
 Copyright (C) 2019 Duncan Brown (https://github.com/xovox)
@@ -36,11 +16,20 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# RetroTink-Setup
+
+Retro gaming with the $FREE [RetroPie](https://retropie.org.uk) Linux OS on a $35 [Raspberry Pi](https://www.raspberrypi.org) is pretty sweet, but instead of an HDTV... wouldn't you rather do it on a 20+ year old CRT?
+
+The [RetroTink Ultimate](http://www.retrotink.com) is a board for the Raspberry Pi that gives you every analog connection you could want, in true 24-bit RGB color!
+
+This project brings all of the above projects into one easy to swallow integration!
+
 # What You Get
 
-* Most importantly, a fairly simple installation path!
-* 240p boot & emulation look beautiful!
-* Per-rom hdmi_timings & retroarch config for optimal vertical resolutions
+* Easy installation
+* Pixel-perfect console emulation
+* Pixel-perfect arcade emulation for most games
+  * This is achieved with on-load screen resolution changes
 * Installation of CRT Friendly EmulationStation themes!
 * No annoying EmulationStation yellow text!
 * Cleaner save states & files organization!
@@ -48,11 +37,35 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 * 240p test suite roms for several platforms!
 * My unbridled enthusiasm about building this project!
 
-# Requirements
+## Emulator Compatibility
 
-* Raspberry Pi with a full size GPIO
-* A RetroTink-Ultimate!
-  * http://www.retrotink.com
+I'm aiming to cover everything available, but these are the only platforms I've thoroughly tested.
+
+* arcade
+* fba
+* mame-libretro
+* mastersystem
+* megadrive
+* n64
+* neogeo
+* nes
+* pcengine
+* psx
+* retropie
+* sega32x
+* segacd
+* snes
+* supergrafx
+
+# NTSC & PAL
+
+Sadly, I don't have a PAL setup to test everything on, I'll need someone else to do that for me.
+
+# Before We Begin
+
+*DO NOT RUN THE RETROPIE UPDATE*
+
+This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport resolution.
 
 # Installation
 
@@ -80,29 +93,11 @@ cd RetroTink-Setup &&
 
 ## NTSC
 
-| Make 		| Model 	| Tested 	| Issues
-|------		|-------	|--------	|--------
-| Panasonic	| CT-27D10	| Component	| None
 
-# Emulator Compatibility
 
-I'm aiming to cover everything available, but these are the only platforms I've thoroughly tested.
-
-* arcade
-* fba
-* mame-libretro
-* mastersystem
-* megadrive
-* n64
-* neogeo
-* nes
-* pcengine
-* psx
-* retropie
-* sega32x
-* segacd
-* snes
-* supergrafx
+| Make 		| Model 	| Tested 	| Issues	| Tested By
+|------		|-------	|--------	|--------	|-----------
+| Panasonic	| CT-27D10	| Component	| None          | Duncan
 
 # Troubleshooting
 
@@ -116,7 +111,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 * Scripts
 - [ ] Work well with other RetroPie scripts I'm writing
-- [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/
+- [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/ or something
 - [ ] hdmiTimings needs to be smart enough to see if we're running on a CRT
 
 * On Start Script
@@ -151,18 +146,9 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 * Alternate Orientation
 - [ ] Vertical!
 
-## Better vertical resolution support
+# Footnotes
 
-The big problem is that not all games use the same vertical resolution.  Once I break down the formula to calculate hdmi_timings into a bash/bc script, I can just use data from a csv to generate all of the required files.
+I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup naming convention only.  I am not affiliated with Mike Chi & RetroTink.
 
-| Rom Count	| Horiz	| Vert
-|----------	|------	|-----
-| 863		| 256	| 224
-| 595		| 320	| 224
-| 396		| 256	| 240
-| 358		| 288	| 224
-| 347		| 320	| 240
-| 325		| 384	| 224
-| 128		| 336	| 240
-| 108		| 384	| 240
+Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
 
