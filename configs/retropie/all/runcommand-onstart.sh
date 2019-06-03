@@ -24,14 +24,12 @@
 
 source $HOME/RetroTink-Setup/bin/env
 
-mySys="$1"
-myEmu="$2"
+mySystem="$1"
+myEmulator="$2"
 myRom="$3"
-myCmd="$4"
+myCommand="$4"
 
 myStripRom="${myRom%.*}"
+myRomBasename="$(basename "$myStripRom")"
 
-# if we have timings for this system, use them
-if [ -f "$myRom" ]; then
-	hdmiTimings $mySys
-fi
+hdmiTimings

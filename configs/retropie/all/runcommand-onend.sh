@@ -20,4 +20,5 @@
 source $HOME/RetroTink-Setup/bin/env
 
 # Change Screen mode back
-hdmiTimings default
+mySystem=default
+hdmiTimings
