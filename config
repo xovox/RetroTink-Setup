@@ -17,8 +17,8 @@
 # along with RetroTink-Setup.  If not, see <https://www.gnu.org/licenses/>.
 ##############################################################################
 
-
 # change to ntsc or pal
+# PAL IS CURRENTLY UNSUPPORTED
 export tvRegion="ntsc"
 
 # where we keep everything
