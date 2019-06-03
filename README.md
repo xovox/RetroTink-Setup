@@ -1,6 +1,26 @@
-# ZERO WARRANTY
+# RetroTink-Setup
 
-RetroTink-Setup :: Utility to configure RetroPie for a RetroTink-Ultimate
+I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
+
+This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
+
+# Before We Begin
+
+## Warnings
+
+This is for NTSC only!  PAL is eventually coming, though I can't personally test it.
+
+This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport height & width.
+
+## Notes
+
+I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup naming convention only.  I am not affiliated with Mike Chi & RetroTink.
+
+Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
+
+## License
+
+RetroTink-Setup :: Utility suite to configure RetroPie for a RetroTink-Ultimate
 Copyright (C) 2019 Duncan Brown (https://github.com/xovox)
 
 This program is free software: you can redistribute it and/or modify
@@ -16,42 +36,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# BIG OLD WARNING
-
-This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport height & width.
-
-# RetroTink-Setup
-
-NOTE: I've named my project RetroTink-Setup to keep it in line with the RetroPie-Setup naming convention only.  I am not affiliated with Mike Chi & RetroTink.
-
-I *love* my RetroPie, and I really want to use my RetroTink with it... but I don't like the custom RetroTink's interface, I need something family-friendly... not exclusively engineer-friendly. 😁 I'm sure my use of an emoji in my README.md disqualifies me as an engineer now!
-
-This project is designed to make running RetroPie with a RetroTink as seamless as possible.  There are other projects that deal with it, but I found myself rewriting them... so here we are!
-
-Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial groundwork, though he seems to be PAL & I'm NTSC... which brought us to where we are now.
-
 # What You Get
 
-* A fairly simple installation path
-
+* Most importantly, a fairly simple installation path!
 * 240p boot & emulation look beautiful!
-* CRT Friendly EmulationStation themes
+* Per-rom hdmi_timings & retroarch config for optimal vertical resolutions
+* Installation of CRT Friendly EmulationStation themes!
 * No annoying EmulationStation yellow text!
-* Cleaner save states & files organization
-  * Shared over samba, if enabled
-* 240p test suite roms for several platforms
-
-# Goals
-
-* Run on a vanilla RetroPie installation
-
-* Make it expandable
-  * Focus on using configuration files, not hard coded values
-  * NTSC & PAL TVs don't behave the same, we should take that into consideration
-
-* Make it maintainable
-  * This is why I used Ansible to do most of the heavy lifting
-  * Ansible also acts as easy-to-read documentation, for the engineers
+* Cleaner save states & files organization!
+  * Shared over samba, if smbd is enabled!
+* 240p test suite roms for several platforms!
+* My unbridled enthusiasm about building this project!
 
 # Requirements
 
@@ -61,7 +56,7 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 
 # Installation
 
-I'm assuming you're able to SSH in. I typically connect my Pi via Ethernet when I'm first configuring it for ease.
+I'm assuming you're able to SSH in, or have a monitor & keyboard. I typically connect my Pi via Ethernet when I'm first configuring it for ease.
 
 You can also do the initial configuration with a monitor hooked up to HDMI.
 
@@ -126,7 +121,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 * On Start Script
 - [x] Use per-emulator timings
-- [ ] Use per-game timings
+- [x] Use per-game timings
 
 * On End Script
 - [x] Revert to boot's hdmi_timings
@@ -146,10 +141,28 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 * Configs
 - [x] /boot/config.txt settings figured out
+- [x] Custom retroarch config for each rom
 
 * Video
 - [x] Collect NTSC timings
-- [ ] Find someone to figure out PAL timings
+- [ ] Collect PAL timings
+- [x] Custom hdmi_timings for each rom via runcommand-onstart
 
 * Alternate Orientation
 - [ ] Vertical!
+
+## Better vertical resolution support
+
+The big problem is that not all games use the same vertical resolution.  Once I break down the formula to calculate hdmi_timings into a bash/bc script, I can just use data from a csv to generate all of the required files.
+
+| Rom Count	| Horiz	| Vert
+|----------	|------	|-----
+| 863		| 256	| 224
+| 595		| 320	| 224
+| 396		| 256	| 240
+| 358		| 288	| 224
+| 347		| 320	| 240
+| 325		| 384	| 224
+| 128		| 336	| 240
+| 108		| 384	| 240
+
