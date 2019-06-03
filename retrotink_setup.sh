@@ -31,6 +31,21 @@ if [ "$errorExit" ]; then
 	exit
 fi
 
+echo -e "\e[91m"
+cat << BIGWARNING
+THIS WILL OVERWRITE MANY MANY THINGS!
+
+Please be sure to use this on a VANILLA RetroPie 4.4 installation!
+
+If you're sure you want to continue, type "sure, why not?" below!
+BIGWARNING
+
+echo -e "\e[0m"
+
+while [ "$iamsure" != "sure, why not?" ]; do
+	read -p "are you ready: " iamsure
+done
+
 # install ansible
 if ! (dpkg -l ansible > /dev/null); then
   sudo apt update
