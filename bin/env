@@ -17,7 +17,6 @@
 # along with RetroTink-Setup.  If not, see <https://www.gnu.org/licenses/>.
 ##############################################################################
 
-
 # ############################################################################
 # Common environment for any support scripts we use
 # ############################################################################
@@ -26,12 +25,19 @@ source $HOME/RetroTink-Setup/config
 
 # if we have a timings file, let's use it!
 hdmiTimings() {
-	hdmiTimingsFile="$hdmiTimingsDir/$1"
+	systemTimings="$hdmiTimingsDir/$mySystem"
+	romTimings="$hdmiTimingsDir/game/$myRomBasename"
+	# do we have one for this rom
+	if [ -f "$romTimings" ]; then
+		hdmiTimings="$(cat "$romTimings")"
+	# if not, use generic timings
+	elif [ -f "$systemTimings" ]; then
+		hdmiTimings="$(cat $systemTimings)"
+	fi
+
 	# does the timings file exist?
-	if [ -f "$hdmiTimingsFile" ]; then
-		# set it as a variable
-		hdmi_timings="$(cat $hdmiTimingsFile)"
+	if [ "$hdmiTimings" ]; then
 		# apply our new timings
-		vcgencmd hdmi_timings $hdmi_timings >> /tmp/timings
+		vcgencmd hdmi_timings $hdmiTimings
 	fi
 }
