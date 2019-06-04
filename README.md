@@ -24,6 +24,11 @@ The [RetroTink Ultimate](http://www.retrotink.com) is a board for the Raspberry 
 
 This project brings all of the above projects into one easy to swallow integration!
 
+# See it in action!
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/0.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
+Watch an installation on YouTube.
+
 # What You Get
 
 * Easy installation
