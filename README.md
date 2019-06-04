@@ -26,8 +26,7 @@ This project brings all of the above projects into one easy to swallow integrati
 
 # See it in action!
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/0.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
-Watch an installation on YouTube.
+* YouTube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/1.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
 
 # What You Get
 
