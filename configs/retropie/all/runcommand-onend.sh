@@ -22,3 +22,10 @@ source $HOME/RetroTink-Setup/bin/env
 # Change Screen mode back
 mySystem=default
 hdmiTimings
+
+
+grep -q "Fatal error" /dev/shm/runcommand.log && {
+	sleep 5
+	egrep -B 1 -A 100 "Fatal error" /dev/shm/runcommand.log
+	sleep 15
+}

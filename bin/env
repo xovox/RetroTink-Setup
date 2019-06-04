@@ -26,7 +26,7 @@ source $HOME/RetroTink-Setup/config
 # if we have a timings file, let's use it!
 hdmiTimings() {
 	systemTimings="$hdmiTimingsDir/$mySystem"
-	romTimings="$hdmiTimingsDir/game/$myRomBasename"
+	romTimings="$hdmiTimingsDir/roms/$myRomBasename"
 	# do we have one for this rom
 	if [ -f "$romTimings" ]; then
 		hdmiTimings="$(cat "$romTimings")"
@@ -38,6 +38,7 @@ hdmiTimings() {
 	# does the timings file exist?
 	if [ "$hdmiTimings" ]; then
 		# apply our new timings
-		vcgencmd hdmi_timings $hdmiTimings
+		vcgencmd hdmi_timings $hdmiTimings >> /tmp/timings
+echo
 	fi
 }

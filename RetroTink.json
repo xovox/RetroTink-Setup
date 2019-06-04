@@ -1,0 +1,22 @@
+{"retrotink": {
+
+    "userconfig": {
+        "COMMENT": "set this to ntsc or pal",
+        "tvstandard": "ntsc",
+
+        "COMMENT": "set this to genesis or megadrive",
+        "sega16": "genesis"
+    },
+
+    "rtink": {
+        "install": "/home/pi/RetroTink-Setup"
+    },
+
+    "retropie": {
+	"install": "/home/pi/RetroPie"
+    },
+
+    "es": {
+	"etc": "/etc/emulationstation"
+    }
+}}

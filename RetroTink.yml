@@ -32,6 +32,10 @@
 
   pre_tasks:
 
+    - name: "Read RetroTink.json"
+      include_vars:
+        file: "RetroTink.json"
+
     - name: "Finding Our TV Region"
       set_fact:
         tv_region: "{{ lookup('env', 'tvRegion') }}"
