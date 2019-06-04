@@ -26,14 +26,15 @@ This project brings all of the above projects into one easy to swallow integrati
 
 # See it in action!
 
-* YouTube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/1.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
+* YouTube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/0.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
 
 # What You Get
 
-* Easy installation
-* Pixel-perfect console emulation
-* Pixel-perfect arcade emulation for most games
-  * This is achieved with on-load screen resolution changes
+* Easy installation!
+* Pixel-perfect console emulation!
+* Pixel-perfect arcade emulation for most games!
+  * This is achieved with on-load screen resolution changes!
+* Automatic rotation for vertical games!
 * Installation of CRT Friendly EmulationStation themes!
 * No annoying EmulationStation yellow text!
 * Cleaner save states & files organization!
@@ -149,7 +150,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 - [x] Custom hdmi_timings for each rom via runcommand-onstart
 
 * Alternate Orientation
-- [ ] Vertical!
+- [x] Vertical!
 
 # Footnotes
 
