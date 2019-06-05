@@ -150,6 +150,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 - [x] Collect NTSC timings
 - [ ] Collect PAL timings
 - [x] Custom hdmi_timings for each rom via runcommand-onstart
+- [x] Make 480p compatible
 
 * Alternate Orientation
 - [x] Vertical!
