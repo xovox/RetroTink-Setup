@@ -165,6 +165,7 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 
 According to databases I've looked at, the following roms have a resolution of 0 or > 240p and will not look right.
 
+| name | name | name | name | name | name |
 |--- |--- |--- |--- |--- |--- |
 | 8ball1.zip | 8ball.zip | ace.zip | ainferno.zip | airduelm72.zip | airduel.zip |
 | alinvade.zip | alphamis.zip | alphaona.zip | alphaone.zip | ambushh.zip | ambushj.zip |
