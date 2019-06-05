@@ -27,7 +27,7 @@
     - name: Restart Samba
       service:
         name: smbd
-        state: restarted
+        state: reloaded
       listen: "restart samba"
 
   pre_tasks:
