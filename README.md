@@ -164,6 +164,7 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 # Bad Resolutions
 
 According to databases I've looked at, the following roms have a resolution of 0 or > 240p and will not look right.
+
 | rom | resolution | rom | resolution | rom | resolution |
 |---- |---- |---- |---- |---- |---- |
 | 8ball1.zip | 248 | 8ball.zip | 248 | ace.zip | 304 |
