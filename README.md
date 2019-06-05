@@ -24,6 +24,8 @@ The [RetroTink Ultimate](http://www.retrotink.com) is a board for the Raspberry 
 
 This project brings all of the above projects into one easy to swallow integration!
 
+NOTE: All games > 240p have their resolution halved since i'm focused on SD CRTs
+
 # See it in action!
 
 * YouTube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/0.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
