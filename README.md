@@ -163,10 +163,10 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 
 # Bad Resolutions
 
-The following roms have a resolution > 240p and will not look right.
+According to databases I've looked at, the following roms have a resolution of 0 or > 240p and will not look right.
 
-| 8ball1.zip | 8ball.zip | ace.zip | ainferno.zip | airduelm72.zip | airduel.zip |
 |--- |--- |--- |--- |--- |--- |
+| 8ball1.zip | 8ball.zip | ace.zip | ainferno.zip | airduelm72.zip | airduel.zip |
 | alinvade.zip | alphamis.zip | alphaona.zip | alphaone.zip | ambushh.zip | ambushj.zip |
 | ambusht.zip | ambushv.zip | ambush.zip | amerdart.zip | aquariumj.zip | aquarium.zip |
 | arabiana.zip | arabian.zip | arcadia.zip | arian.zip | armorap.zip | armorar.zip |
