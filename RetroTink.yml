@@ -59,20 +59,31 @@
   tasks:
 
     # vfat doesn't like the standard Ansible backup extension
-    - name: "Backup /boot/config.txt"
+    - name: "Backup /boot Configs"
       copy:
-        src: /boot/config.txt
-        dest: /boot/config.txt.{{ansible_date_time.epoch}}
+        src: "/boot/{{ item }}"
+        dest: "/boot/{{ item }}.{{ansible_date_time.epoch}"
+      with_items:
+        - "cmdline.txt"
+        - "config.txt"
 
-    - name: "Generate /boot/config.txt"
+    - name: "Update /boot Configs"
       template:
-        src: templates/config.txt.j2
-        dest: /boot/config.txt
+        src: "templates/{{ item }}.j2"
+        dest: "/boot/{{ item }}"
+      with_items:
+        - "cmdline.txt"
+        - "config.txt"
 
-    - name: "Generate /boot/cmdline.txt"
-      template:
-        src: templates/cmdline.txt.j2
-        dest: /boot/cmdline.txt
+#    - name: "Generate /boot/config.txt"
+#      template:
+#        src: templates/config.txt.j2
+#        dest: /boot/config.txt
+
+#    - name: "Generate /boot/cmdline.txt"
+#      template:
+#        src: templates/cmdline.txt.j2
+#        dest: /boot/cmdline.txt
 
     - name: "Generate EmulationStation Systems List"
       template:
@@ -90,12 +101,6 @@
         rsync_opts:
           - "--backup"
           - "--suffix .{{ansible_date_time.epoch}}"
-
-    - name: "Create RetroArch Per-ROM Configs Dir"
-      file:
-        path: "/opt/retropie/configs/all/retroarch/config"
-        state: directory
-        mode: '0755'
 
     - name: "Copy RetroArch ROM Configs To Arcade Platforms"
       synchronize:
