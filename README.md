@@ -38,6 +38,7 @@ NOTE: All games > 240p have their resolution halved since i'm focused on SD CRTs
   * This is achieved with on-load screen resolution changes!
 * Automatic rotation for vertical games!
 * Installation of CRT Friendly EmulationStation themes!
+* No system messages on boot/shutdown/reboot!
 * No annoying EmulationStation yellow text!
 * 240p test suite roms for several platforms!
 * My unbridled enthusiasm about building this project!
