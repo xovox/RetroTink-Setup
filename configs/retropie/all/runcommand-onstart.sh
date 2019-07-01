@@ -22,6 +22,8 @@
 # $3 - full path to rom
 # $4 - full emulator command line
 
+(
+set -x
 source $HOME/RetroTink-Setup/bin/env
 
 mySystem="$1"
@@ -33,3 +35,4 @@ myStripRom="${myRom%.*}"
 myRomBasename="$(basename "$myStripRom")"
 
 hdmiTimings
+) > /tmp/runCommandOnStart.out 2>&1
