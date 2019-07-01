@@ -22,19 +22,11 @@
   become: yes
   become_user: root
 
-  handlers:
-
-    - name: Restart Samba
-      service:
-        name: smbd
-        state: reloaded
-      listen: "restart samba"
-
   pre_tasks:
 
-    - name: "Read RetroTink.json"
-      include_vars:
-        file: "RetroTink.json"
+#    - name: "Read RetroTink.json"
+#      include_vars:
+#        file: "RetroTink.json"
 
     - name: "Finding Our TV Region"
       set_fact:
@@ -86,29 +78,24 @@
           - "--backup"
           - "--suffix .{{ansible_date_time.epoch}}"
 
-    - name: "Copy RetroArch ROM Configs To fba"
-      synchronize:
-        src: configs/roms/
-        dest: /home/pi/RetroPie/roms/fba/
-        rsync_opts:
-          - "--backup"
-          - "--suffix .{{ansible_date_time.epoch}}"
+    - name: "Create RetroArch Per-ROM Configs Dir"
+      file:
+        path: "/opt/retropie/configs/all/retroarch/config"
+        state: directory
+        mode: '0755'
 
-    - name: "Copy RetroArch ROM Configs To arcade"
+    - name: "Copy RetroArch ROM Configs To Arcade Platforms"
       synchronize:
         src: configs/roms/
-        dest: /home/pi/RetroPie/roms/arcade/
+        dest: '/home/pi/RetroPie/roms/{{ item }}'
         rsync_opts:
           - "--backup"
           - "--suffix .{{ansible_date_time.epoch}}"
-
-    - name: "Copy RetroArch ROM Configs To mame-libretro"
-      synchronize:
-        src: configs/roms/
-        dest: /home/pi/RetroPie/roms/mame-libretro/
-        rsync_opts:
-          - "--backup"
-          - "--suffix .{{ansible_date_time.epoch}}"
+      with_items:
+        - "arcade"
+        - "fba"
+        - "mame-libretro"
+        - "mame-mame4all"
 
     - name: "Disable RetroArch Notification Text"
       lineinfile:
@@ -117,38 +104,16 @@
         regexp: '^video_font_enable ='
         line: 'video_font_enable = "false"'
 
-    - name: "Create Save States Directories"
-      shell: /usr/bin/find . -mindepth 1 -maxdepth 1 -type d -exec mkdir -p /home/pi/RetroPie/savestates/{} \;
-      args:
-        chdir: /home/pi/RetroPie/roms
-
-    - name: "Create Save Files Directories"
-      shell: /usr/bin/find . -mindepth 1 -maxdepth 1 -type d -exec mkdir -p /home/pi/RetroPie/savefiles/{} \;
-      args:
-        chdir: /home/pi/RetroPie/roms
-
-    - name: "Fix Permissions On Save States Directories"
+    - name: "Fix Permissions"
       file:
-        path: /home/pi/RetroPie/savestates
+        path: "{{ item }}"
         state: directory
         owner: pi
         group: pi
         recurse: yes
-
-    - name: "Fix Permissions On Save Files Directories"
-      file:
-        path: /home/pi/RetroPie/savefiles
-        state: directory
-        owner: pi
-        group: pi
-        recurse: yes
-
-    - name: "Add Save States/Files Shares To Samba"
-      blockinfile:
-        block: "{{ lookup('file', 'files/smb.conf') }}"
-        dest: /etc/samba/smb.conf
-        backup: yes
-      notify: "restart samba"
+      with_items:
+        - "/opt/retropie"
+        - "/home/pi"
 
     - name: "Install 240p Test Suite ROMs & ISOs"
       synchronize:

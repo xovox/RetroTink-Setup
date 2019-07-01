@@ -39,8 +39,6 @@ NOTE: All games > 240p have their resolution halved since i'm focused on SD CRTs
 * Automatic rotation for vertical games!
 * Installation of CRT Friendly EmulationStation themes!
 * No annoying EmulationStation yellow text!
-* Cleaner save states & files organization!
-  * Shared over samba, if smbd is enabled!
 * 240p test suite roms for several platforms!
 * My unbridled enthusiasm about building this project!
 
@@ -67,12 +65,6 @@ I'm aiming to cover everything available, but these are the only platforms I've 
 # NTSC & PAL
 
 Sadly, I don't have a PAL setup to test everything on, I'll need someone else to do that for me.
-
-# Before We Begin
-
-*DO NOT RUN THE RETROPIE UPDATE*
-
-This only works under a vanilla installation of RetroPie 4.4!  If you run the update via the RetroPie menu, it will break everything.  I haven't spent too much time looking into it, other than finding that it's now ignoring custom viewport resolution.
 
 # Installation
 
@@ -120,6 +112,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 * Scripts
 - [ ] Work well with other RetroPie scripts I'm writing
+  * 
 - [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/ or something
 
 * On Start Script
@@ -137,9 +130,6 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 - [x] Push RetroArch configs
 - [x] Limit what systems we play
 - [x] Remove notification text on game start
-- [x] Create save states directories
-- [x] Create save files directories
-- [x] Add save states/files dirs to samba
 - [x] Install SD friendly ES themes
 
 * Configs
