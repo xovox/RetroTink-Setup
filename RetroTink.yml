@@ -48,6 +48,14 @@
         segasixteenfull: "Mega Drive"
       when: tv_region == "pal"
 
+    - name: "Find / UUID"
+      command: "findmnt --noheadings --output PARTUUID /"
+      register: root_uuid
+
+    - name: "Find / Filesystem Type"
+      command: "findmnt --noheadings --output FSTYPE /"
+      register: root_fstype
+
   tasks:
 
     # vfat doesn't like the standard Ansible backup extension
@@ -60,6 +68,11 @@
       template:
         src: templates/config.txt.j2
         dest: /boot/config.txt
+
+    - name: "Generate /boot/cmdline.txt"
+      template:
+        src: templates/cmdline.txt.j2
+        dest: /boot/cmdline.txt
 
     - name: "Generate EmulationStation Systems List"
       template:
