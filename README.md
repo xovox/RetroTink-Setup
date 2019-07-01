@@ -26,6 +26,10 @@ This project brings all of the above projects into one easy to swallow integrati
 
 NOTE: All games > 240p have their resolution halved since i'm focused on SD CRTs
 
+# Pre-Built Images
+
+[The release page](https://github.com/xovox/RetroTink-Setup/releases) has any, and all, pre-built images ready to go.
+
 # See it in action!
 
 * YouTube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QwixXT4_c-0/0.jpg)](https://www.youtube.com/watch?v=QwixXT4_c-0)
@@ -154,7 +158,7 @@ Shout out to [Vykran](https://github.com/Vykyan/retroTINK-setup) for the initial
 
 # Bad Resolutions
 
-According to databases I've looked at, the following roms have a resolution of 0 or > 240p and will not look right.
+According to databases I've looked at, the following roms have difficult to work with resolutions and will not look right with my current setup.  I hope to fix these.
 
 | rom | resolution | rom | resolution | rom | resolution |
 |---- |---- |---- |---- |---- |---- |
