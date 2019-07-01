@@ -22,6 +22,9 @@
 source ./config
 export tvRegion
 
+# don't create .retry file
+ANSIBLE_RETRY_FILES_ENABLED=0
+
 if [ "$PWD" != "$retroTinkDir" ]; then
 	echo -e "Please move this directory to \"$retroTinkDir\"\n"
         errorExit="true"
