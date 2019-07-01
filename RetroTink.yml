@@ -62,7 +62,7 @@
     - name: "Backup /boot Configs"
       copy:
         src: "/boot/{{ item }}"
-        dest: "/boot/{{ item }}.{{ansible_date_time.epoch}"
+        dest: "/boot/{{ item }}.{{ ansible_date_time.epoch }}"
       with_items:
         - "cmdline.txt"
         - "config.txt"

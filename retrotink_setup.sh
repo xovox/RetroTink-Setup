@@ -38,9 +38,8 @@ echo -e "\e[91m"
 cat << BIGWARNING
 THIS WILL OVERWRITE MANY MANY THINGS!
 
-Please be sure to use this on a VANILLA RetroPie 4.4 installation!
-
-If you're sure you want to continue, type "sure, why not?" below!
+Please be sure to have run a full RetroPie upgrade as well as update all of
+your system packages first!
 BIGWARNING
 
 echo -e "\e[0m"
