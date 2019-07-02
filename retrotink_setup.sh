@@ -40,6 +40,8 @@ THIS WILL OVERWRITE MANY MANY THINGS!
 
 Please be sure to have run a full RetroPie upgrade as well as update all of
 your system packages first!
+
+If you're truly ready, type the following: sure, why not?
 BIGWARNING
 
 echo -e "\e[0m"
