@@ -168,7 +168,6 @@ Menu won't be named "RetroTink-Setup", but a more generic name for all of the ot
 - [x] Collect NTSC timings
 - [ ] Collect PAL timings
 - [x] Custom hdmi_timings for each rom via runcommand-onstart
-- [x] Make 480p compatible
 
 * Alternate Orientation
 - [x] Vertical!
