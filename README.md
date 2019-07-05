@@ -113,11 +113,34 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 * General
 - [ ] Reorganize repo, it grew too organically so things are scattered
-- [ ] Build vanilla image people can directly write to their SD card
+- [X] Build vanilla image people can directly write to their SD card
+  * [Releases](https://github.com/xovox/RetroTink-Setup/releases)
+
+* Vertical Cabinet
+- [ ] Configured via standard config for RetroTink.yml
+- [ ] Installs es-dev for vertical menuing
+- [X] ROM configs set for rotation
+- [ ] Template the ROM configs for custom rotation amount
+
+* S-Video Output
+
+This has been tested & we're only getting luma, not chroma.  This will hopefully be fixed.
+
+* 480i Output
+** I'm not sure that this is even possible, but it'd be great to have high res games working at native resolution
+** I've reached out to Mike Chi about this.
+
+* Menuing
+Menu won't be named "RetroTink-Setup", but a more generic name for all of the other RetroPie tools I'm working on
+- [ ] Launched from RetroPie menu
+- [ ] Updates
+- [ ] Monitor Orientation
+
+* Templatizing
+- [ ] ROM configs should be symlinks to a templated config
 
 * Scripts
 - [ ] Work well with other RetroPie scripts I'm writing
-  * 
 - [ ] Get rid of env, everything should be discrete scripts in $HOME/RetroPie/scripts/ or something
 
 * On Start Script
