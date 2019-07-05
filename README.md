@@ -107,7 +107,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 
 # Issues
 
-* Updating fresh install of RetroPie breaks custom_viewport_width
+RetroPie 4.5 doesn't work properly. [Use my image!](https://github.com/xovox/RetroTink-Setup/releases)
 
 # Tasks
 
@@ -116,7 +116,7 @@ See the [troubleshooting doc](TROUBLESHOOTING.md).
 - [X] Build vanilla image people can directly write to their SD card
   * [Releases](https://github.com/xovox/RetroTink-Setup/releases)
 
-* Vertical Cabinet
+* Rotate Display
 - [ ] Configured via standard config for RetroTink.yml
 - [ ] Installs es-dev for vertical menuing
 - [X] ROM configs set for rotation
@@ -168,9 +168,6 @@ Menu won't be named "RetroTink-Setup", but a more generic name for all of the ot
 - [x] Collect NTSC timings
 - [ ] Collect PAL timings
 - [x] Custom hdmi_timings for each rom via runcommand-onstart
-
-* Alternate Orientation
-- [x] Vertical!
 
 # Footnotes
 
