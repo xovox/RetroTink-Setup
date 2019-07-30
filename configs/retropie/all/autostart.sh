@@ -1,1 +1,0 @@
-emulationstation --no-splash #auto
